@@ -10,9 +10,7 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  // const currentUser = { displayName: "felix franko" };
   const { logOut, currentUser } = useAuthContext();
-  // const currentUser = false;
   return (
     <>
       <Disclosure
@@ -21,17 +19,16 @@ export default function Navbar() {
       >
         <div className="mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between">
-            {/* left content */}
             <Link className="pr-2 text-2xl font-semibold" to="/">
               React Movie App
             </Link>
-            {/* right content */}
+
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               {currentUser && (
                 <h5 className="mr-2 capitalize">{currentUser?.displayName} </h5>
               )}
               <Switch />
-              {/* Profile dropdown */}
+
               <Menu as="div" className="relative ml-3">
                 <div>
                   <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -41,7 +38,6 @@ export default function Navbar() {
                       className="h-8 w-8 rounded-full"
                       src={currentUser?.photoURL || avatar}
                       alt="user"
-                      // dış linklerden alacağımız resimler güvenlik nedeniyle görünmeyebilir, bunu aşmak için ekliyoruz
                       referrerPolicy="no-referrer"
                     />
                   </Menu.Button>
