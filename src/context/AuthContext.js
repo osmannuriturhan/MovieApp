@@ -30,17 +30,16 @@ const AuthContextProvider = ({ children }) => {
 
   const createUser = async (email, password, displayName) => {
     try {
-     
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
         password
       );
-      
+
       await updateProfile(auth.currentUser, {
         displayName: displayName,
       });
-      
+
       navigate("/");
       toastSuccessNotify("Registered successfully!");
     } catch (error) {
@@ -49,16 +48,14 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
-  
   const signIn = async (email, password) => {
     try {
-      
       const userCredential = await signInWithEmailAndPassword(
         auth,
         email,
         password
       );
-      
+
       navigate("/");
       toastSuccessNotify("Logged in successfully!");
     } catch (error) {
@@ -68,7 +65,6 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const userObserver = () => {
-    
     onAuthStateChanged(auth, (user) => {
       if (user) {
         console.log(user);
@@ -79,7 +75,6 @@ const AuthContextProvider = ({ children }) => {
           JSON.stringify({ email, displayName, photoURL })
         );
       } else {
-        
         setCurrentUser(false);
         sessionStorage.removeItem("user");
       }
@@ -91,18 +86,14 @@ const AuthContextProvider = ({ children }) => {
     toastSuccessNotify("Logged out successfully");
   };
 
-  
   const signUpProvider = () => {
-    
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {
-        
         navigate("/");
         toastSuccessNotify("Logged in successfully");
       })
       .catch((error) => {
-        
         console.log(error);
       });
   };
@@ -110,7 +101,6 @@ const AuthContextProvider = ({ children }) => {
   const forgotPassword = (email) => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        
         toastSuccessNotify("Please check your email");
       })
       .catch((error) => {
