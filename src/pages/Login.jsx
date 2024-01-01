@@ -4,13 +4,8 @@ import { useAuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  //* consuming context
   const { signIn, signUpProvider, forgotPassword } = useAuthContext();
-  //* ayrı stateler
-  // const [email, setEmail] = useState();
-  // const [password, setPassword] = useState();
-  //! inputlarla çalışıyorsak statelerin ilk değeri null veya undefined olmamalı
-  //* birleştirilmiş state
+
   const [info, setInfo] = useState({
     email: "",
     password: "",

@@ -3,15 +3,8 @@ import GoogleIcon from "../assets/icons/GoogleIcon";
 import { useAuthContext } from "../context/AuthContext";
 
 const Register = () => {
-  //* consuming context
   const { createUser, signUpProvider } = useAuthContext();
-  //* ayrı stateler
-  // const [firstName, setFirstName] = useState();
-  // const [lastName, setLastName] = useState();
-  // const [email, setEmail] = useState();
-  // const [password, setPassword] = useState();
-  //! inputlarla çalışıyorsak statelerin ilk değeri null veya undefined olmamalı
-  //* birleştirilmiş state
+
   const [info, setInfo] = useState({
     firstName: "",
     lastName: "",

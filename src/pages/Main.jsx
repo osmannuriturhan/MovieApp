@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useMovieContext } from "../context/MovieContext";
 import MovieCard from "../components/MovieCard";
 import { toastWarnNotify } from "../helpers/ToastNotify";
@@ -7,25 +7,17 @@ import { useAuthContext } from "../context/AuthContext";
 const Main = () => {
   const { movies, loading, getMovies } = useMovieContext();
   const { currentUser } = useAuthContext();
-  // const [search, setSearch] = useState("");
 
   //* DOM elementlerine ulaşmamızı sağlayan hook
   const inputRef = useRef();
 
   const API_KEY = process.env.REACT_APP_TMDB_KEY;
-  // const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}`;
+
   const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (search && currentUser) {
-    //   getMovies(SEARCH_API);
-    // } else if (!currentUser) {
-    //   toastWarnNotify("Please log in to search a movie");
-    // } else {
-    //   toastWarnNotify("Please enter a text");
-    // }
-    //* useRef ile
+
     if (inputRef.current.value && currentUser) {
       getMovies(SEARCH_API + inputRef.current.value);
     } else if (!currentUser) {
@@ -42,7 +34,6 @@ const Main = () => {
           type="search"
           className="w-80 h-8 rounded-md p-1 m-2"
           placeholder="Search a movie..."
-          // onChange={(e) => setSearch(e.target.value)}
           ref={inputRef}
         />
         <button className="btn-danger-bordered" type="submit">
