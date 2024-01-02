@@ -23,8 +23,13 @@
   .form-container {
     @apply mt-[10vh] mx-auto overflow-hidden relative rounded-[8px] bg-gray-100 dark:bg-[#1c1c1c] before:content-[""] before:absolute before:w-[380px] before:h-[420px] before:top-[-50%] before:left-[-50%] after:content-[""] after:absolute after:w-[380px] after:h-[420px] after:top-[-50%] after:left-[-50%] custom-linear-gradient;
   }
+
   .form-container form {
     @apply absolute inset-[2px] rounded-[8px] bg-gray-100 dark:bg-gray-dark-second z-[10] flex flex-col py-[50px] px-[40px];
+  }
+
+  .movie-wrapper {
+    @apply mt-[10vh] mx-auto overflow-hidden relative rounded-[8px] bg-gray-100 dark:bg-[#1c1c1c] before:content-[""] before:absolute before:w-[380px] before:h-[420px] before:top-[-50%] before:left-[-50%] after:content-[""] after:absolute after:w-[380px] after:h-[420px] after:top-[-50%] after:left-[-50%] custom-linear-gradient;
   }
 }
 
@@ -40,7 +45,6 @@ body {
 /* MovieCard Custom CSS */
 .movie {
   background-color: #080f36;
-
   border-radius: 3px;
   box-shadow: 4px 4px 5px rgba(63, 60, 60, 0.5);
   overflow: hidden;
@@ -51,6 +55,8 @@ body {
   cursor: pointer;
   border: 2px solid #080f36;
   transition: 0.5s all;
+  z-index: 22;
+  @apply custom-linear-gradient;
 }
 
 .movie img {
@@ -80,12 +86,21 @@ body {
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
 }
+
 .movie-over::-webkit-scrollbar {
   display: none;
 }
 
 .movie:hover .movie-over {
   transform: translateX(0%);
+}
+
+.movie-wrapper:-webkit-autofill,
+.movie-wrapper:-webkit-autofill:hover,
+.movie-wrapper:-webkit-autofill:focus .movie-wrapper:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 0px #28292d inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
 }
 
 .tag {
