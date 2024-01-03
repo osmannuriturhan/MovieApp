@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { toastErrorNotify, toastSuccessNotify } from "../helpers/ToastNotify";
 
 export const AuthContext = createContext();
+
 export const useAuthContext = () => {
   return useContext(AuthContext);
 };
@@ -65,6 +66,7 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const userObserver = () => {
+    //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu
     onAuthStateChanged(auth, (user) => {
       if (user) {
         console.log(user);
@@ -87,6 +89,7 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const signUpProvider = () => {
+    //? Google ile giriş yapılması için kullanılan firebase metodu
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {

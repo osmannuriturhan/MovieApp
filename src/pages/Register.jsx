@@ -4,7 +4,6 @@ import { useAuthContext } from "../context/AuthContext";
 
 const Register = () => {
   const { createUser, signUpProvider } = useAuthContext();
-
   const [info, setInfo] = useState({
     firstName: "",
     lastName: "",

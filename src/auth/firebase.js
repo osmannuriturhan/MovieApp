@@ -1,18 +1,17 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-
 import { getAuth } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+// TODO: Replace the following with your app's Firebase project configuration
+//* https://firebase.google.com/docs/auth/web/start
+//* https://console.firebase.google.com/ => project settings
+//! firebase console settings bölümünden firebaseconfig ayarlarını al
 const firebaseConfig = {
-  apiKey: "AIzaSyD6GXnuvcohkieUZr9-ZioKN-NLcRRu-8w",
-  authDomain: "movieapp-b5a6d.firebaseapp.com",
-  projectId: "movieapp-b5a6d",
-  storageBucket: "movieapp-b5a6d.appspot.com",
-  messagingSenderId: "66146330501",
-  appId: "1:66146330501:web:f39cb0c5672008acef86ec",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase

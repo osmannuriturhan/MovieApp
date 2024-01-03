@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import avatar from "../assets/icons/avatar.png";
 import Switch from "./Switch";
 import { useAuthContext } from "../context/AuthContext";
-import Image from "../assets/icons/DOM-Logo.png";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -12,6 +11,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const { logOut, currentUser } = useAuthContext();
+
   return (
     <>
       <Disclosure
@@ -21,11 +21,7 @@ export default function Navbar() {
         <div className="mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between">
             <Link className="pr-2 text-2xl font-semibold" to="/">
-              <div className="flex gap-3">
-                <img className="w-[30px] rounded-full" src={Image} alt="" />{" "}
-                <span className=" text-red-700">DOM</span>
-                <span>Box</span>
-              </div>
+              React Movie App
             </Link>
 
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">

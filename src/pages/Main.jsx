@@ -8,7 +8,6 @@ const Main = () => {
   const { movies, loading, getMovies } = useMovieContext();
   const { currentUser } = useAuthContext();
 
-  //* DOM elementlerine ulaşmamızı sağlayan hook
   const inputRef = useRef();
 
   const API_KEY = process.env.REACT_APP_TMDB_KEY;
