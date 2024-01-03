@@ -4,9 +4,8 @@ import { useAuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 
 const Login = () => {
- 
   const { signIn, signUpProvider, forgotPassword } = useAuthContext();
- 
+
   const [info, setInfo] = useState({
     email: "",
     password: "",
