@@ -1,9 +1,11 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import avatar from "../assets/icons/avatar.png";
 import Switch from "./Switch";
 import { useAuthContext } from "../context/AuthContext";
+import { useMovieContext } from "../context/MovieContext";
+
 import Image from "../assets/icons/DOM-Logo.png";
 
 function classNames(...classes) {
@@ -13,6 +15,12 @@ function classNames(...classes) {
 export default function Navbar() {
   const { logOut, currentUser } = useAuthContext();
 
+  const { setMovies, allMovies } = useMovieContext();
+
+  const handleDOMBoxClick = () => {
+    setMovies(allMovies);
+  };
+
   return (
     <>
       <Disclosure
@@ -21,13 +29,17 @@ export default function Navbar() {
       >
         <div className="mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between">
-            <Link className="pr-2 text-2xl font-semibold" to="/">
+            <NavLink
+              className="pr-2 text-2xl font-semibold"
+              to="/"
+              onClick={handleDOMBoxClick}
+            >
               <div className="flex gap-3">
                 <img className="w-[30px] rounded-full" src={Image} alt="" />
                 <span className="text-red-700">DOM</span>
                 <span>Box</span>
               </div>
-            </Link>
+            </NavLink>
 
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               {currentUser && (
