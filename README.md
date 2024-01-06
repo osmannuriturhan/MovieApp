@@ -27,3 +27,5 @@ Bu uygulama, film endüstrisine ilgi duyan herkes için idealdir, ister casual b
 - Yazar: [Osman Nuri TURHAN]
 - LinkedIn: [https://www.linkedin.com/in/osman-nuri-turhan/]
 - E-posta: [osmannuri.turhan01@gmail.com]
+
+![Animation4](https://github.com/osmannuriturhan/MovieApp/assets/140538437/05f7afa8-ba69-4ecc-b9ba-00cea9f40903)
