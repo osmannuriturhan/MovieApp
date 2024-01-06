@@ -12,8 +12,17 @@ Bu uygulama, film endüstrisine ilgi duyan herkes için idealdir, ister casual b
 
 ## Kullanılan Teknolojiler
 
--React: Kullanıcı arayüzü oluşturma.
--Axios: HTTP istekleri.
--Firebase: Veritabanı ve/veya kimlik doğrulama.
--Tailwind CSS: Stil ve tasarım.
--React Router: Sayfa yönlendirme ve navigasyon.
+- React: Kullanıcı arayüzü oluşturma.
+
+- Axios: HTTP istekleri.
+
+- Firebase: Veritabanı ve/veya kimlik doğrulama.
+
+- Tailwind CSS: Stil ve tasarım.
+
+- React Router: Sayfa yönlendirme ve navigasyon.
+
+## Contact
+- Yazar: [Osman Nuri TURHAN]
+- LinkedIn: [https://www.linkedin.com/in/osman-nuri-turhan/]
+- E-posta: [osmannuri.turhan01@gmail.com]
