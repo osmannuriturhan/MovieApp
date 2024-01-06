@@ -1,6 +1,7 @@
 ## Projects ---> https://movie-app-osman.vercel.app/
 
-### Movie App
+
+## Movie App
 
 # Proje Hakkında
 
